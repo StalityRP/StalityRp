@@ -49,7 +49,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, #6ac4e0, #00c3ff);
+    background: linear-gradient(45deg, #ffb004, #9b6a01);
 }
 
 .container-card .box::after {
@@ -59,18 +59,18 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, #00c3ff, #6ac4e0);
+    background: linear-gradient(45deg, #9b6a01, #ffb004);
     filter: blur(30px);
 }
 
 .container-card .box:nth-child(2)::before,
 .container-card .box:nth-child(2)::after {
-    background: linear-gradient(315deg, #6ac4e0, #00c3ff);
+    background: linear-gradient(315deg, #ffb004, #9b6a01);
 }
 
 .container-card .box:nth-child(3)::before,
 .container-card .box:nth-child(3)::after {
-    background: linear-gradient(315deg, #00c3ff, #6ac4e0);
+    background: linear-gradient(315deg, #9b6a01, #ffb004);
 }
 
 .container-card .box span {
