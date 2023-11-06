@@ -1,23 +1,28 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $recipient = "shadow.devdc@gmail.com"; // Remplacez ceci par votre adresse e-mail
-
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['message'];
 
-    $subject = "Nouveau message de la part de $name";
+    // Adresse email où les messages doivent être envoyés
+    $to = "shadow.devdc@gmail.com";
 
-    $email_content = "Nom: $name\n";
-    $email_content .= "Email: $email\n\n";
-    $email_content .= "Message:\n$message\n";
+    $subject = "Nouveau message depuis le formulaire de contact";
 
-    $headers = "De: $name <$email>";
+    $email_body = "Vous avez reçu un nouveau message.\n\n" .
+                  "Nom: $name\n" .
+                  "Email: $email\n" .
+                  "Message:\n$message";
 
-    if (mail($recipient, $subject, $email_content, $headers)) {
-        echo "Votre message a été envoyé avec succès.";
+    $headers = "De : $email";
+
+    // Envoyer l'email
+    if (mail($to, $subject, $email_body, $headers)) {
+        echo "Votre message a été envoyé avec succès!";
     } else {
-        echo "Une erreur s'est produite lors de l'envoi du message.";
+        echo "Désolé, une erreur s'est produite. Votre message n'a pas pu être envoyé.";
     }
+} else {
+    echo "Une erreur s'est produite. Veuillez réessayer.";
 }
 ?>
